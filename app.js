@@ -1,5 +1,3 @@
-
-
 const jobSection = document.querySelector("#educationSection");
 const articles = document.querySelectorAll("#educationSection article");
 
@@ -15,7 +13,7 @@ jobSection.addEventListener("click", function (e) {
 });
 document.addEventListener("DOMContentLoaded", function () {
   const darkModeButton = document.querySelector("#darkButton");
-  const lightModeButton = document.querySelector('#lightButton');
+  const lightModeButton = document.querySelector("#lightButton");
   darkModeButton.addEventListener("click", function () {
     // if set via local storage previously
     if (localStorage.getItem("color-theme")) {
@@ -37,10 +35,8 @@ document.addEventListener("DOMContentLoaded", function () {
         localStorage.setItem("color-theme", "dark");
       }
     }
-
-    
   });
-
+/** 
   const menuButton = document.querySelector("#menu-button");
   const menuItems = document.querySelector("#menu");
   const menuButtonSpans = document.querySelectorAll("#menu-button span");
@@ -71,28 +67,35 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
   };
-
-  const jobsLinks = document.querySelectorAll("#educationSection button");
+*/
+  const educationLinks = document.querySelectorAll("#educationSection button");
   const firstLink = document.querySelector("#link1");
+  const clases = [
+    "border-sky-500",
+    "bg-slate-300",
+    "dark:bg-sky-500",
+    "font-bold"
+  ];
 
-  jobsLinks.forEach(function (link) {
-    link.addEventListener("click", function () {
-      firstLink.classList.remove(
-        "border-sky-500",
-        "bg-slate-300",
-        "dark:bg-sky-500",
-        "font-bold"
-      );
-      jobsLinks.forEach(function (link) {
-        link.classList.remove(
-          "border-sky-500",
-          "bg-slate-300",
-          "dark:bg-sky-500"
-        );
+  educationLinks.forEach(function (link) {
+    link.addEventListener("touchstart", function () {
+      firstLink.classList.remove(...clases);
+      educationLinks.forEach(function (link) {
+        link.classList.remove(...clases);
         link.classList.add("border-slate-500");
       });
       toggleButtonStyle(link);
     });
+
+    link.addEventListener("click", function () {
+      firstLink.classList.remove(...clases);
+      educationLinks.forEach(function (link) {
+        link.classList.remove(...clases);
+        link.classList.add("border-slate-500");
+      });
+      toggleButtonStyle(link);
+    });
+
   });
 });
 
@@ -103,7 +106,7 @@ function toggleButtonStyle(button) {
     !button.classList.contains("bg-slate-300")
   ) {
     button.classList.remove("border-slate-500");
-    button.classList.add("border-sky-500", "bg-slate-300", "dark:bg-sky-500");
+    button.classList.add(...clases);
   }
 }
 
@@ -162,25 +165,20 @@ const text = "Desarrollador Web";
 const typedText = document.getElementById("typed-text");
 
 function typeWriter(text, i = 0) {
-    if (i < text.length) {
-        typedText.textContent += text.charAt(i);
-        i++;
-        setTimeout(() => typeWriter(text, i), 100); // Ajusta la velocidad de escritura aquí
-    } else {
-        // Espera un momento y luego reinicia la escritura
-        setTimeout(() => {
-            typedText.textContent = "";
-            typeWriter(text);
-        }, 1000); // Espera 1 segundo antes de reiniciar
-    }
+  if (i < text.length) {
+    typedText.textContent += text.charAt(i);
+    i++;
+    setTimeout(() => typeWriter(text, i), 100); // Ajusta la velocidad de escritura aquí
+  } else {
+    // Espera un momento y luego reinicia la escritura
+    setTimeout(() => {
+      typedText.textContent = "";
+      typeWriter(text);
+    }, 1000); // Espera 1 segundo antes de reiniciar
+  }
 }
 
-
 window.addEventListener("load", () => {
-    typeWriter(text);
+  typeWriter(text);
 });
-
-
-
-
 
