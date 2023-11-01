@@ -36,38 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
   });
-/** 
-  const menuButton = document.querySelector("#menu-button");
-  const menuItems = document.querySelector("#menu");
-  const menuButtonSpans = document.querySelectorAll("#menu-button span");
-  const menuLinks = document.querySelectorAll("#menu a");
 
-  menuButton.addEventListener("click", () => {
-    menuItems.classList.toggle("hidden");
-    menuButtonSpans.forEach((span) => {
-      span.classList.toggle("animado");
-    });
-  });
-
-  menuLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-      menuItems.classList.toggle("hidden");
-      menuButtonSpans.forEach((span) => {
-        span.classList.toggle("animado");
-      });
-    });
-  });
-
-  window.onresize = () => {
-    let w = outerWidth;
-    if (w > 768) {
-      menuItems.classList.add("hidden");
-      menuButtonSpans.forEach((span) => {
-        span.classList.remove("animado");
-      });
-    }
-  };
-*/
   const educationLinks = document.querySelectorAll("#educationSection button");
   const firstLink = document.querySelector("#link1");
   const clases = [
