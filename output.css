@@ -1305,11 +1305,6 @@ video {
   background-color: rgb(14 165 233 / var(--tw-bg-opacity));
 }
 
-:is(.dark .hover\:dark\:bg-slate-700):hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(51 65 85 / var(--tw-bg-opacity));
-}
-
 :is(.dark .dark\:hover\:text-slate-50:hover) {
   --tw-text-opacity: 1;
   color: rgb(248 250 252 / var(--tw-text-opacity));
@@ -1449,12 +1444,12 @@ video {
     width: 800px;
   }
 
-  .lg\:w-\[88\%\] {
-    width: 88%;
-  }
-
   .lg\:w-\[85\%\] {
     width: 85%;
+  }
+
+  .lg\:w-\[88\%\] {
+    width: 88%;
   }
 
   .lg\:grid-cols-3 {
