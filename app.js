@@ -62,13 +62,11 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   educationLinks.forEach(function (link) {
-    link.addEventListener("click", function (event) {
-      event.preventDefault(); // Previene la acción predeterminada del enlace
+    link.addEventListener("touchend", function () {
       handleLinkClick(link);
     });
-  
-    link.addEventListener("touchend", function (event) {
-      event.preventDefault(); // Previene la acción predeterminada del enlace
+
+    link.addEventListener("click", function () {
       handleLinkClick(link);
     });
   });
